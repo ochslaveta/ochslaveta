@@ -1,0 +1,5 @@
+select date_trunc('day', block_time) as day, count(*) as txs,
+sum(number_of_items) as items,
+sum(usd_amount) as volume 
+from seaport."view_transactions"
+group by day
